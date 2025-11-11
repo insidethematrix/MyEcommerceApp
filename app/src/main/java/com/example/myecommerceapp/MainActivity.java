@@ -25,17 +25,13 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Log.d("ECommerceTest", "--- Shopping Cart Testing Has Begun ---");
-        List<Product> shoppingCart = new ArrayList<>();
 
-        shoppingCart.add(new Electronics("ELC-001", "Laptop Pro X", 25000.0, "TechBrand", 24));
-        shoppingCart.add(new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White"));
-        shoppingCart.add(new Electronics("ELC-002", "Wireless Mouse", 750.0, "TechBrand", 12));
+        ShoppingCart myCard=new ShoppingCart();
 
-        for ( Product product :shoppingCart){
-            double tax = product.calculateTax();
-            Log.d("ECommerceTest", product.getName() + " has a tax of: " + tax + " TL");
-
-        }
+        myCard.addProduct(new Electronics("ELC-001", "Laptop Pro X", 25000.0, "TechBrand", 24));
+        myCard.addProduct(new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White"));
+        myCard.addProduct(new Electronics("ELC-002", "Wireless Mouse", 750.0, "TechBrand", 12));
+        double total=myCard.calculateTotalPrice();
+        Log.d("ECommerceTest" ,"total is "+total);
     }
 }
