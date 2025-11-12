@@ -1,7 +1,6 @@
 package com.example.myecommerceapp;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import android.util.Log;
 
 import android.os.Bundle;
@@ -26,12 +25,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        ShoppingCart myCard=new ShoppingCart();
+        User currentUser=new User("Ahmet Eroğlu", "ahmet123", "ahmet@mail.com");
+        ShoppingCart cart= currentUser.getUserCard();
 
-        myCard.addProduct(new Electronics("ELC-001", "Laptop Pro X", 25000.0, "TechBrand", 24));
-        myCard.addProduct(new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White"));
-        myCard.addProduct(new Electronics("ELC-002", "Wireless Mouse", 750.0, "TechBrand", 12));
-        double total=myCard.calculateTotalPrice();
+        cart.addProduct(new Electronics("ELC-001", "Laptop Pro X", 25000.0, "TechBrand", 24));
+        cart.addProduct(new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White"));
+        cart.addProduct(new Electronics("ELC-002", "Wireless Mouse", 750.0, "TechBrand", 12));
+        double total=cart.calculateTotalPrice();
         Log.d("ECommerceTest" ,"total is "+total);
     }
 }
