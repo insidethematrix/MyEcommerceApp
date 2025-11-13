@@ -10,6 +10,13 @@ public class ShoppingCart {
     public void addProduct(Product product){
         productsInCart.add(product);
     }
+    public void removeProduct(Product product){
+        productsInCart.remove(product);
+
+    }
+    public void clearCart(){
+        productsInCart.clear();
+    }
     public double calculateTotalPrice(){
         double total=0.0;
         for(Product item :productsInCart ){

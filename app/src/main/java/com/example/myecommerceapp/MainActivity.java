@@ -36,9 +36,21 @@ public class MainActivity extends AppCompatActivity {
         cart = currentUser.getUserCard();
 
         addProductButton.setOnClickListener(v -> {
+            cart.clearCart();
+            Log.d("ECommerceTest", "Cart cleared.");
 
-            cart.addProduct(new Clothing("CLT-002", "Designer Jeans", 1200.0, "L", "Blue"));
-            Log.d("ECommerceTest", "Yeni ürün sepete eklendi!");
+            Electronics laptop = new Electronics("ELC-001", "Laptop Pro X", 25000.0, "TechBrand", 24);
+            Clothing tshirt = new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White");
+            Electronics mouse = new Electronics("ELC-002", "Wireless Mouse", 750.0, "TechBrand", 12);
+            cart.addProduct(laptop);
+            cart.addProduct(tshirt);
+            cart.addProduct(mouse);
+            Log.d("ECommerceTest", "New products added to cart!");
+
+            cart.removeProduct(mouse);
+            Log.d("ECommerceTest", "Mouse removed from the cart");
+
+
 
             double newTotal = cart.calculateTotalPrice();
 
