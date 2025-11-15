@@ -21,6 +21,11 @@ public class ShoppingCart {
         double total=0.0;
         for(Product item :productsInCart ){
             total+=item.getPrice()+ item.calculateTax();
+            if(item instanceof Discountable){
+                Discountable DisCountableItem=(Discountable) item;
+                total-=DisCountableItem.applyDiscount();
+            }
+
         }
         return total;
     }
