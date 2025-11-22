@@ -14,8 +14,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private Button addProductButton;
-    private TextView totalPriceTextView;
+    private Button btnAddElectronics;
+    private Button btnAddClothing;
+    private Button btnClear;
+    private TextView txtReceipt;
+    private TextView txtTotal;
     private User currentUser;
     private ShoppingCart cart;
 
@@ -29,36 +32,57 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        addProductButton = findViewById(R.id.addProductButton);
-        totalPriceTextView = findViewById(R.id.totalPriceTextView);
+        btnAddElectronics = findViewById(R.id.btnAddElectronics);
+        btnAddClothing = findViewById(R.id.btnAddClothing);
+        btnClear = findViewById(R.id.btnClear);
+        txtReceipt = findViewById(R.id.txtReceipt);
+        txtTotal = findViewById(R.id.txtTotal);
 
         currentUser = new User("Ahmet Eroğlu", "ahmet123", "ahmet@mail.com");
         cart = currentUser.getUserCard();
 
-        addProductButton.setOnClickListener(v -> {
-            cart.clearCart();
-            Log.d("ECommerceTest", "Cart cleared.");
-
+        btnAddElectronics.setOnClickListener(v -> {
             Electronics laptop = new Electronics("ELC-001", "Laptop Pro X", 25000.0, "TechBrand", 24);
-            Clothing tshirt = new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White");
-            Electronics mouse = new Electronics("ELC-002", "Wireless Mouse", 750.0, "TechBrand", 12);
             cart.addProduct(laptop);
+
+            updateReceipt("Laptop added (tax %20)");
+            updateTotalPrice();
+        });
+
+        btnAddClothing.setOnClickListener(v -> {
+            Clothing tshirt = new Clothing("CLT-001", "T-Shirt", 350.0, "M", "White");
             cart.addProduct(tshirt);
-            cart.addProduct(mouse);
-            Log.d("ECommerceTest", "New products added to cart!");
 
-            cart.removeProduct(mouse);
-            Log.d("ECommerceTest", "Mouse removed from the cart");
+            // Update UI
+            updateReceipt("T-Shirt added (tax %8)");
+            updateTotalPrice();
+        });
 
+        btnClear.setOnClickListener(v -> {
+            cart.clearCart();
 
-
-            double newTotal = cart.calculateTotalPrice();
-
-            totalPriceTextView.setText("Total: " + String.valueOf(newTotal)+ " TL");
+            // Reset UI
+            txtReceipt.setText("Cart is cleaned...\n");
+            updateTotalPrice();
         });
 
 
 
 
+
+
     }
+    private void updateReceipt(String message) {
+        // .append() adds text to the end instead of replacing it
+        txtReceipt.append(message + "\n");
+    }
+
+    // Helper method to recalculate and show total price
+    private void updateTotalPrice() {
+        double total = cart.calculateTotalPrice();
+        txtTotal.setText("Toplam: " + total + " TL");
+    }
+
+
+
 }
