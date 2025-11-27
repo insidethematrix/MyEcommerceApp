@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(v -> {
             cart.clearCart();
             updateTotalPrice();
-            Toast.makeText(this, "Sepet boşaltıldı!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cart emptied!", Toast.LENGTH_SHORT).show();
 
         });
 
@@ -82,13 +82,13 @@ public class MainActivity extends AppCompatActivity {
         updateTotalPrice();
 
         // Kullanıcıya küçük bir bilgi balonu göster (Feedback)
-        Toast.makeText(this, product.getName() + " sepete eklendi!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, product.getName() + " Added to cart!", Toast.LENGTH_SHORT).show();
     }
 
     // Helper method to recalculate and show total price
     private void updateTotalPrice() {
         double total = cart.calculateTotalPrice();
-        txtTotal.setText("Toplam: " + total + " TL");
+        txtTotal.setText("Total: " + total + " TL");
     }
 
 
