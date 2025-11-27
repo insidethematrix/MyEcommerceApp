@@ -5,8 +5,9 @@ import android.util.Log;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,15 +16,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnAddElectronics;
-    private Button btnAddClothing;
+    private ImageButton btnLaptop, btnMouse, btnTshirt, btnJeans;
     private Button btnClear;
-    private TextView txtReceipt;
     private TextView txtTotal;
+
     private User currentUser;
     private ShoppingCart cart;
-    private EditText inputProductName;
-    private EditText inputProductPrice;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,40 +34,55 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btnAddElectronics = findViewById(R.id.btnAddElectronics);
-        btnAddClothing = findViewById(R.id.btnAddClothing);
+        btnLaptop = findViewById(R.id.btnLaptop);
+        btnMouse = findViewById(R.id.btnMouse);
+        btnTshirt = findViewById(R.id.btnTshirt);
+        btnJeans = findViewById(R.id.btnJeans);
         btnClear = findViewById(R.id.btnClear);
-        txtReceipt = findViewById(R.id.txtReceipt);
         txtTotal = findViewById(R.id.txtTotal);
-        inputProductName = findViewById(R.id.inputProductName);
-        inputProductPrice = findViewById(R.id.inputProductPrice);
 
-        currentUser = new User("Ahmet Eroğlu", "ahmet123", "ahmet@mail.com");
+        String incomingUsername = getIntent().getStringExtra("USERNAME_KEY");
+        if (incomingUsername == null) incomingUsername = "Misafir";
+        currentUser = new User(incomingUsername, "user1", "email@test.com");
         cart = currentUser.getUserCard();
 
-        btnAddElectronics.setOnClickListener(v -> {
-            addProductFromInput("Electronics");
+        btnLaptop.setOnClickListener(v -> {
+            Electronics laptop = new Electronics("ELC-001", "Laptop Pro", 25000.0, "TechBrand", 24);
+            addToCart(laptop);
+        });
+        btnMouse.setOnClickListener(v -> {
+            Electronics mouse = new Electronics("ELC-002", "Wireless Mouse", 750.0, "TechBrand", 12);
+            addToCart(mouse);
         });
 
-        btnAddClothing.setOnClickListener(v -> {
-            addProductFromInput("Clothing");
+        // T-Shirt'e Tıklanınca
+        btnTshirt.setOnClickListener(v -> {
+            Clothing tshirt = new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White");
+            addToCart(tshirt);
         });
 
+        // Jeans'e Tıklanınca
+        btnJeans.setOnClickListener(v -> {
+            Clothing jeans = new Clothing("CLT-002", "Blue Jeans", 800.0, "32", "Blue");
+            addToCart(jeans);
+        });
+
+        // Temizle Butonu
         btnClear.setOnClickListener(v -> {
             cart.clearCart();
-            txtReceipt.setText("Sepet temizlendi...\n");
             updateTotalPrice();
+            Toast.makeText(this, "Sepet boşaltıldı!", Toast.LENGTH_SHORT).show();
 
-            // Kutuları da temizleyelim ki taze bir başlangıç olsun
-            inputProductName.setText("");
-            inputProductPrice.setText("");
         });
 
 
     }
-    private void updateReceipt(String message) {
-        // .append() adds text to the end instead of replacing it
-        txtReceipt.append(message + "\n");
+    private void addToCart(Product product) {
+        cart.addProduct(product);
+        updateTotalPrice();
+
+        // Kullanıcıya küçük bir bilgi balonu göster (Feedback)
+        Toast.makeText(this, product.getName() + " sepete eklendi!", Toast.LENGTH_SHORT).show();
     }
 
     // Helper method to recalculate and show total price
@@ -76,29 +90,6 @@ public class MainActivity extends AppCompatActivity {
         double total = cart.calculateTotalPrice();
         txtTotal.setText("Toplam: " + total + " TL");
     }
-    private void addProductFromInput(String type) {
-        String nameText = inputProductName.getText().toString();
-        String priceText = inputProductPrice.getText().toString();
-        if (nameText.isEmpty() || priceText.isEmpty()) {
-            Log.d("ECommerceTest", "Hata: İsim veya fiyat boş olamaz!");
-            return;
-        }
-        double price = Double.parseDouble(priceText);
-        if (type.equals("Electronics")) {
-            // ID ve Marka şimdilik rastgele
-            Electronics product = new Electronics("E-GEN", nameText, price, "MarkaYok", 12);
-            cart.addProduct(product);
-            updateReceipt(nameText + " (Elektronik) eklendi. Vergi: %20");
-        }
-        else if (type.equals("Clothing")) {
-            // ID ve Beden şimdilik rastgele
-            Clothing product = new Clothing("C-GEN", nameText, price, "L", "Siyah");
-            cart.addProduct(product);
-            updateReceipt(nameText + " (Giyim) eklendi. Vergi: %8");
-        }
-        updateTotalPrice();
-        inputProductName.setText("");
-        inputProductPrice.setText("");
+
 
     }
-}
