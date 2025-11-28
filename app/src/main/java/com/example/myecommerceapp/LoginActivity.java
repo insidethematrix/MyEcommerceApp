@@ -11,8 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LoginActivity extends AppCompatActivity {
-    private EditText inputUsername;
+    private FirebaseAuth mAuth;
+    private EditText inputMail;
     private EditText inputPassword;
     private Button btnLogin;
 
@@ -26,30 +30,50 @@ public class LoginActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        mAuth = FirebaseAuth.getInstance();
 
-        inputUsername = findViewById(R.id.inputUsername);
+        inputMail = findViewById(R.id.inputMail);
         inputPassword = findViewById(R.id.inputPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(v -> {
-            // Kutulardaki yazıları al
-            String username = inputUsername.getText().toString();
-            String password = inputPassword.getText().toString();
 
 
-            if (username.equals("admin") && password.equals("1234")) {
+            String email = inputMail.getText().toString().trim();
+            String password = inputPassword.getText().toString().trim();
 
-
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-                intent.putExtra("USERNAME_KEY", username);
-                startActivity(intent);
-
-                finish();
-
-            } else {
-
-                Toast.makeText(this, "Hatalı Kullanıcı Adı veya Şifre!", Toast.LENGTH_SHORT).show();
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please enter email and password.", Toast.LENGTH_SHORT).show();
+                return;
             }
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) {
+
+                            String loggedInUserEmail = mAuth.getCurrentUser().getEmail();
+
+
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
+                            intent.putExtra("USERNAME_KEY", loggedInUserEmail);
+
+                            startActivity(intent);
+                            finish();
+                        } else {
+
+                            Toast.makeText(this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+
+
+
         });
-    }
+    });
+        android.widget.TextView txtGoToRegister = findViewById(R.id.txtGoToRegister);
+
+
+        txtGoToRegister.setOnClickListener(v -> {
+
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
+  }
 }

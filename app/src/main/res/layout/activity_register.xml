@@ -5,61 +5,61 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/txtTitle"
+        android:id="@+id/txtRegTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to E-Shop"
-        android:textSize="32sp"
+        android:text="Create new account"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="#009688"
-        android:layout_marginTop="80dp"
+        android:textColor="#333333"
+        android:layout_marginTop="150dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/inputMail"
+        android:id="@+id/inputRegName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:layout_marginTop="48dp"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:hint="Full name"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/txtRegTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputRegEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inputRegName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/inputRegPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password (at least 6 character)"
         android:inputType="textPassword"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/inputMail"
+        app:layout_constraintTop_toBottomOf="@id/inputRegEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Sign Up"
+        android:backgroundTint="#009688"
         android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/inputPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/txtGoToRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account? Register"
-        android:textSize="16sp"
-        android:textColor="#0000FF"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@id/inputRegPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
