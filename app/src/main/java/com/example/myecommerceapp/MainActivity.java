@@ -1,6 +1,7 @@
 package com.example.myecommerceapp;
 
 
+import android.content.Intent;
 import android.util.Log;
 
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private User currentUser;
     private ShoppingCart cart;
+    private Button btnProfile;
 
 
     @Override
@@ -55,24 +57,29 @@ public class MainActivity extends AppCompatActivity {
             addToCart(mouse);
         });
 
-        // T-Shirt'e Tıklanınca
+
         btnTshirt.setOnClickListener(v -> {
             Clothing tshirt = new Clothing("CLT-001", "Basic T-Shirt", 350.0, "M", "White");
             addToCart(tshirt);
         });
 
-        // Jeans'e Tıklanınca
+
         btnJeans.setOnClickListener(v -> {
             Clothing jeans = new Clothing("CLT-002", "Blue Jeans", 800.0, "32", "Blue");
             addToCart(jeans);
         });
 
-        // Temizle Butonu
+
         btnClear.setOnClickListener(v -> {
             cart.clearCart();
             updateTotalPrice();
             Toast.makeText(this, "Cart emptied!", Toast.LENGTH_SHORT).show();
 
+        });
+        btnProfile = findViewById(R.id.btnGoToProfile);
+        btnProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            startActivity(intent);
         });
 
 
@@ -81,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
         cart.addProduct(product);
         updateTotalPrice();
 
-        // Kullanıcıya küçük bir bilgi balonu göster (Feedback)
+
         Toast.makeText(this, product.getName() + " Added to cart!", Toast.LENGTH_SHORT).show();
     }
 
-    // Helper method to recalculate and show total price
+
     private void updateTotalPrice() {
         double total = cart.calculateTotalPrice();
         txtTotal.setText("Total: " + total + " TL");
