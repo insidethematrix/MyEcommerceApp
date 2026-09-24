@@ -1,0 +1,89 @@
+<resources>
+    <!-- Auth -->
+    <string name="login_title">Tekrar hoş geldin</string>
+    <string name="login_subtitle">Alışverişe devam etmek için giriş yap</string>
+    <string name="register_title">Hesabını oluştur</string>
+    <string name="register_subtitle">Sadece bir dakika sürer</string>
+    <string name="hint_name">Ad soyad</string>
+    <string name="hint_email">E-posta</string>
+    <string name="hint_password">Şifre</string>
+    <string name="hint_password_new">Şifre (en az 6 karakter)</string>
+    <string name="action_login">Giriş yap</string>
+    <string name="action_register">Hesap oluştur</string>
+    <string name="login_no_account">Hesabın yok mu? Kayıt ol</string>
+    <string name="register_have_account">Zaten hesabın var mı? Giriş yap</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Bir şeyler ters gitti. Lütfen tekrar dene.</string>
+    <string name="error_empty_fields">Lütfen tüm alanları doldur.</string>
+    <string name="error_invalid_email">Lütfen geçerli bir e-posta adresi gir.</string>
+    <string name="error_short_password">Şifre en az %1$d karakter olmalı.</string>
+    <string name="error_stock_limit">Stokta yalnızca %1$d adet var.</string>
+    <string name="error_out_of_stock">Üzgünüz, %1$s için yeterli stok yok.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Mağaza</string>
+    <string name="nav_cart">Sepet</string>
+    <string name="nav_profile">Profil</string>
+
+    <!-- Home -->
+    <string name="home_title">Keşfet</string>
+    <string name="home_search_hint">Ürün veya marka ara</string>
+    <string name="chip_all">Tümü</string>
+    <string name="chip_electronics">Elektronik</string>
+    <string name="chip_clothing">Giyim</string>
+    <string name="home_empty">Henüz ürün yok</string>
+    <string name="home_no_results">Aramana uygun ürün bulunamadı</string>
+    <string name="action_seed">Örnek ürünleri yükle</string>
+    <string name="seed_success">Örnek ürünler yüklendi</string>
+    <string name="label_out_of_stock">Tükendi</string>
+    <string name="label_discount">%%%1$d İNDİRİM</string>
+
+    <!-- Product detail -->
+    <string name="action_add_to_cart">Sepete ekle</string>
+    <string name="detail_added">Sepete eklendi</string>
+    <string name="detail_in_cart">Sepetinde %1$d adet</string>
+    <string name="detail_stock">Stokta %1$d adet</string>
+    <string name="detail_tax_info">Ödemede %%%1$d KDV eklenir</string>
+    <string name="detail_warranty">%1$d ay garanti</string>
+    <string name="detail_size">Beden: %1$s</string>
+    <string name="detail_color">Renk: %1$s</string>
+    <string name="detail_description">Açıklama</string>
+    <string name="detail_not_found">Bu ürün artık mevcut değil.</string>
+
+    <!-- Cart -->
+    <string name="cart_title">Sepetim</string>
+    <string name="cart_empty_title">Sepetin boş</string>
+    <string name="cart_empty_subtitle">Eklediğin ürünler burada görünecek.</string>
+    <string name="action_start_shopping">Alışverişe başla</string>
+    <string name="cart_subtotal">Ara toplam</string>
+    <string name="cart_tax">KDV</string>
+    <string name="cart_discount">İndirim</string>
+    <string name="cart_total">Toplam</string>
+    <string name="action_checkout">Siparişi tamamla</string>
+    <string name="checkout_in_progress">Sipariş veriliyor…</string>
+    <string name="order_success">Siparişin alındı!</string>
+    <string name="action_clear_cart">Temizle</string>
+    <string name="cart_clear_confirm">Sepetteki tüm ürünler kaldırılsın mı?</string>
+    <string name="cart_unit_price">Adet fiyatı %1$s</string>
+    <string name="cd_increase">Adedi artır</string>
+    <string name="cd_decrease">Adedi azalt</string>
+    <string name="cd_remove">Sepetten çıkar</string>
+
+    <!-- Profile -->
+    <string name="profile_orders">Sipariş geçmişi</string>
+    <string name="profile_no_orders">Henüz sipariş vermedin.</string>
+    <string name="order_number">Sipariş #%1$s</string>
+    <string name="order_status_placed">Alındı</string>
+    <string name="action_logout">Çıkış yap</string>
+    <string name="logout_confirm">Avora\'dan çıkış yapılsın mı?</string>
+    <plurals name="order_item_count">
+        <item quantity="one">%d ürün</item>
+        <item quantity="other">%d ürün</item>
+    </plurals>
+
+    <!-- Common -->
+    <string name="action_cancel">Vazgeç</string>
+    <string name="cd_product_image">Ürün görseli</string>
+    <string name="cd_back">Geri</string>
+</resources>

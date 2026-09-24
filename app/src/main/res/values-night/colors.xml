@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 teal palette, dark scheme -->
+    <color name="md_primary">#82D5C8</color>
+    <color name="md_on_primary">#003731</color>
+    <color name="md_primary_container">#005048</color>
+    <color name="md_on_primary_container">#9EF2E4</color>
+    <color name="md_secondary">#B1CCC6</color>
+    <color name="md_on_secondary">#1C3531</color>
+    <color name="md_secondary_container">#334B47</color>
+    <color name="md_on_secondary_container">#CCE8E2</color>
+    <color name="md_background">#0E1513</color>
+    <color name="md_on_background">#DEE4E1</color>
+    <color name="md_surface_variant">#3F4946</color>
+    <color name="md_on_surface_variant">#BEC9C5</color>
+
+    <color name="sale">#FF8A80</color>
+</resources>

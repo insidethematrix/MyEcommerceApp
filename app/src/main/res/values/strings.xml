@@ -1,3 +1,92 @@
 <resources>
-    <string name="app_name">Avora</string>
+    <string name="app_name" translatable="false">Avora</string>
+
+    <!-- Auth -->
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Sign in to continue shopping</string>
+    <string name="register_title">Create your account</string>
+    <string name="register_subtitle">It only takes a minute</string>
+    <string name="hint_name">Full name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_password_new">Password (min. 6 characters)</string>
+    <string name="action_login">Log in</string>
+    <string name="action_register">Create account</string>
+    <string name="login_no_account">Don\'t have an account? Register</string>
+    <string name="register_have_account">Already have an account? Log in</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_empty_fields">Please fill in all fields.</string>
+    <string name="error_invalid_email">Please enter a valid email address.</string>
+    <string name="error_short_password">Password must be at least %1$d characters.</string>
+    <string name="error_stock_limit">Only %1$d left in stock.</string>
+    <string name="error_out_of_stock">Sorry, %1$s doesn\'t have enough stock.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Shop</string>
+    <string name="nav_cart">Cart</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Home -->
+    <string name="home_title">Discover</string>
+    <string name="home_search_hint">Search products or brands</string>
+    <string name="chip_all">All</string>
+    <string name="chip_electronics">Electronics</string>
+    <string name="chip_clothing">Clothing</string>
+    <string name="home_empty">No products yet</string>
+    <string name="home_no_results">No products match your search</string>
+    <string name="action_seed">Load sample products</string>
+    <string name="seed_success">Sample products loaded</string>
+    <string name="label_out_of_stock">Out of stock</string>
+    <string name="label_discount">%1$d%% OFF</string>
+
+    <!-- Product detail -->
+    <string name="action_add_to_cart">Add to cart</string>
+    <string name="detail_added">Added to cart</string>
+    <string name="detail_in_cart">%1$d in your cart</string>
+    <string name="detail_stock">%1$d in stock</string>
+    <string name="detail_tax_info">+%1$d%% VAT applied at checkout</string>
+    <string name="detail_warranty">%1$d-month warranty</string>
+    <string name="detail_size">Size: %1$s</string>
+    <string name="detail_color">Color: %1$s</string>
+    <string name="detail_description">Description</string>
+    <string name="detail_not_found">This product is no longer available.</string>
+
+    <!-- Cart -->
+    <string name="cart_title">My Cart</string>
+    <string name="cart_empty_title">Your cart is empty</string>
+    <string name="cart_empty_subtitle">Products you add will show up here.</string>
+    <string name="action_start_shopping">Start shopping</string>
+    <string name="cart_subtotal">Subtotal</string>
+    <string name="cart_tax">VAT</string>
+    <string name="cart_discount">Discount</string>
+    <string name="cart_total">Total</string>
+    <string name="cart_discount_amount" translatable="false">−%1$s</string>
+    <string name="action_checkout">Place order</string>
+    <string name="checkout_in_progress">Placing order…</string>
+    <string name="order_success">Order placed successfully!</string>
+    <string name="action_clear_cart">Clear</string>
+    <string name="cart_clear_confirm">Remove all items from your cart?</string>
+    <string name="cart_unit_price">%1$s each</string>
+    <string name="cd_increase">Increase quantity</string>
+    <string name="cd_decrease">Decrease quantity</string>
+    <string name="cd_remove">Remove from cart</string>
+
+    <!-- Profile -->
+    <string name="profile_orders">Order history</string>
+    <string name="profile_no_orders">You haven\'t placed any orders yet.</string>
+    <string name="order_number">Order #%1$s</string>
+    <string name="order_status_placed">Placed</string>
+    <string name="action_logout">Log out</string>
+    <string name="logout_confirm">Log out of Avora?</string>
+    <plurals name="order_item_count">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+
+    <!-- Common -->
+    <string name="action_cancel">Cancel</string>
+    <string name="cd_product_image">Product image</string>
+    <string name="cd_back">Back</string>
 </resources>

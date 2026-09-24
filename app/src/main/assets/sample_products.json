@@ -1,0 +1,139 @@
+{
+  "elc-macbook-pro-14": {
+    "category": "electronics",
+    "name": "MacBook Pro 14\" Space Grey",
+    "brand": "Apple",
+    "price": 89999.0,
+    "stock": 8,
+    "warrantyMonths": 24,
+    "imageUrl": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
+    "description": "Powerful and sleek laptop with Apple's M1 Pro chip and a stunning Liquid Retina XDR display."
+  },
+  "elc-zenbook-pro-duo": {
+    "category": "electronics",
+    "name": "Zenbook Pro Dual Screen",
+    "brand": "Asus",
+    "price": 74999.0,
+    "stock": 5,
+    "warrantyMonths": 24,
+    "imageUrl": "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
+    "description": "High-performance laptop with a secondary touchscreen, built for creative professionals."
+  },
+  "elc-lenovo-yoga-920": {
+    "category": "electronics",
+    "name": "Yoga 920 2-in-1",
+    "brand": "Lenovo",
+    "price": 42999.0,
+    "stock": 12,
+    "warrantyMonths": 24,
+    "imageUrl": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
+    "description": "Convertible laptop with a 360-degree hinge that switches between laptop and tablet modes."
+  },
+  "elc-iphone-13-pro": {
+    "category": "electronics",
+    "name": "iPhone 13 Pro",
+    "brand": "Apple",
+    "price": 54999.0,
+    "stock": 15,
+    "warrantyMonths": 24,
+    "imageUrl": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
+    "description": "Pro camera system, A15 Bionic chip and a 120Hz ProMotion display."
+  },
+  "elc-airpods-max": {
+    "category": "electronics",
+    "name": "AirPods Max Silver",
+    "brand": "Apple",
+    "price": 21999.0,
+    "stock": 20,
+    "warrantyMonths": 24,
+    "imageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+    "description": "Over-ear headphones with high-fidelity audio, adaptive EQ and active noise cancellation."
+  },
+  "elc-echo-plus": {
+    "category": "electronics",
+    "name": "Echo Plus Smart Speaker",
+    "brand": "Amazon",
+    "price": 3999.0,
+    "stock": 30,
+    "warrantyMonths": 12,
+    "imageUrl": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
+    "description": "Smart speaker with Alexa built in and a hub for controlling smart home devices."
+  },
+  "clt-plaid-shirt": {
+    "category": "clothing",
+    "name": "Plaid Shirt",
+    "brand": "Classic Wear",
+    "price": 899.9,
+    "stock": 40,
+    "size": "L",
+    "color": "Red",
+    "imageUrl": "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/thumbnail.webp",
+    "description": "Timeless men's shirt with a classic plaid pattern and a comfortable fit."
+  },
+  "clt-aorus-tshirt": {
+    "category": "clothing",
+    "name": "Aorus Gaming T-Shirt",
+    "brand": "Gigabyte",
+    "price": 449.9,
+    "stock": 3,
+    "size": "M",
+    "color": "Black",
+    "imageUrl": "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/thumbnail.webp",
+    "description": "Casual cotton t-shirt with the Aorus logo for gaming enthusiasts."
+  },
+  "clt-short-sleeve-shirt": {
+    "category": "clothing",
+    "name": "Short Sleeve Shirt",
+    "brand": "Casual Comfort",
+    "price": 599.9,
+    "stock": 25,
+    "size": "M",
+    "color": "White",
+    "imageUrl": "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/thumbnail.webp",
+    "description": "Breezy short sleeve shirt for warm days, relaxed yet polished."
+  },
+  "clt-blue-frock": {
+    "category": "clothing",
+    "name": "Blue Frock",
+    "brand": "Avora Basics",
+    "price": 1199.9,
+    "stock": 18,
+    "size": "S",
+    "color": "Blue",
+    "imageUrl": "https://cdn.dummyjson.com/product-images/tops/blue-frock/thumbnail.webp",
+    "description": "Charming dress in a vibrant blue, comfortable for everyday wear and special occasions."
+  },
+  "clt-gray-dress": {
+    "category": "clothing",
+    "name": "Gray Dress",
+    "brand": "Avora Basics",
+    "price": 1349.9,
+    "stock": 0,
+    "size": "M",
+    "color": "Gray",
+    "imageUrl": "https://cdn.dummyjson.com/product-images/tops/gray-dress/thumbnail.webp",
+    "description": "Versatile neutral dress that can be dressed up or down."
+  },
+  "clt-air-jordan-1": {
+    "category": "clothing",
+    "name": "Air Jordan 1 Red & Black",
+    "brand": "Nike",
+    "price": 6999.9,
+    "stock": 6,
+    "size": "42",
+    "color": "Red / Black",
+    "imageUrl": "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/thumbnail.webp",
+    "description": "Iconic basketball sneaker with a bold red and black colorway."
+  },
+  "clt-puma-future-rider": {
+    "category": "clothing",
+    "name": "Future Rider Trainers",
+    "brand": "Puma",
+    "price": 3499.9,
+    "stock": 10,
+    "size": "43",
+    "color": "Multi",
+    "imageUrl": "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/thumbnail.webp",
+    "description": "Retro-styled trainers with modern cushioning for everyday comfort."
+  }
+}
