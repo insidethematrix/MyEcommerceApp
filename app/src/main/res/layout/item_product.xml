@@ -48,7 +48,6 @@
                 android:id="@+id/txtBrand"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAllCaps="true"
                 android:textAppearance="?attr/textAppearanceLabelSmall"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 tools:text="Apple" />

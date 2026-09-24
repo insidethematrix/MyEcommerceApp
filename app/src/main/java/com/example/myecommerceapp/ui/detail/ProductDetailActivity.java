@@ -70,7 +70,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         if (!found) return;
 
         binding.toolbar.setTitle(product.getBrand());
-        binding.txtBrand.setText(product.getBrand());
+        binding.txtBrand.setText(ProductAdapter.brandLabel(product));
         binding.txtName.setText(product.getName());
         binding.txtPrice.setText(PriceFormatter.format(product.getPrice()));
         binding.txtTaxInfo.setText(getString(R.string.detail_tax_info,

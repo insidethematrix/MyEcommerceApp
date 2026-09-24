@@ -21,6 +21,8 @@ import com.example.myecommerceapp.databinding.ItemProductBinding;
 import com.example.myecommerceapp.util.PriceFormatter;
 import com.google.android.material.color.MaterialColors;
 
+import java.util.Locale;
+
 public class ProductAdapter extends ListAdapter<Product, ProductAdapter.ViewHolder> {
 
     public interface OnProductClickListener {
@@ -56,7 +58,7 @@ public class ProductAdapter extends ListAdapter<Product, ProductAdapter.ViewHold
 
         void bind(Product product, OnProductClickListener listener) {
             Context context = binding.getRoot().getContext();
-            binding.txtBrand.setText(product.getBrand());
+            binding.txtBrand.setText(brandLabel(product));
             binding.txtName.setText(product.getName());
             binding.txtPrice.setText(PriceFormatter.format(product.getPrice()));
             Glide.with(binding.imgProduct)
@@ -68,6 +70,14 @@ public class ProductAdapter extends ListAdapter<Product, ProductAdapter.ViewHold
             binding.getRoot().setAlpha(product.isInStock() ? 1f : 0.6f);
             binding.getRoot().setOnClickListener(v -> listener.onProductClick(product));
         }
+    }
+
+    /**
+     * Brand names are proper nouns, so they are uppercased with Locale.ROOT; textAllCaps would
+     * use the device locale and turn "Nike" into "NİKE" on Turkish phones.
+     */
+    public static String brandLabel(Product product) {
+        return product.getBrand().toUpperCase(Locale.ROOT);
     }
 
     /** Shared with the detail screen: shows "Out of stock" or the discount, if any. */
