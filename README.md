@@ -10,13 +10,11 @@ architecture on top of **Firebase Authentication** and **Cloud Firestore**. User
 live product catalog, search and filter it, keep a cart that syncs in real time across devices,
 and place orders through an atomic Firestore transaction that checks stock.
 
-<!--
 ## Screenshots
 
-| Catalog | Product | Cart | Profile |
-|---|---|---|---|
-| ![](docs/screenshots/home.png) | ![](docs/screenshots/detail.png) | ![](docs/screenshots/cart.png) | ![](docs/screenshots/profile.png) |
--->
+| Catalog | Product | Cart | Order history |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/home.png" width="200" alt="Product catalog with search and category filters"> | <img src="docs/screenshots/detail.png" width="200" alt="Product detail with discount badge and attributes"> | <img src="docs/screenshots/cart.png" width="200" alt="Cart with quantity controls and price breakdown"> | <img src="docs/screenshots/profile.png" width="200" alt="Profile with order history"> |
 
 ## Features
 
